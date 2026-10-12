@@ -26,6 +26,21 @@ No daemon. No service. No database. No second workflow engine. No custom discipl
 
 ---
 
+## 🛡️ Dark Gravity Integration & Technological Sovereignty Policy
+
+This bridge provides the **Spec-Driven Development (SDD) Contract Enforcement Layer** for the **[Dark Gravity Autonomous CA/CD Software Factory](https://github.com/lgcorzo/rust_CACD_autonomous_factory)** ([Architecture Knowledge Base](https://notebook.google.com/notebook/116d5f03-2fb0-4fa7-bd7c-1c9849920abc)).
+
+### 1. Architectural Role in Dark Gravity
+- **Contract-First Task Ingestion (Vertex 2):** Connects Spec-Kit's formal specifications (`spec.md`, `plan.md`, `tasks.md`) with the autonomous execution agents (`ZeroClaw` / `Rustant`), guaranteeing that agents cannot invent unvetted requirements or drift from business contracts.
+- **TDD & Sandboxed Handoff:** Guides execution inside ephemeral gVisor sandboxes through rigorous Test-Driven Development, preventing "vibe coding" hallucinations and ensuring zero regressions.
+- **Traceability for EU AI Act & SPRI/Hazitek:** Every handoff checkpoint is persisted to the sovereign S3 storage tier (`factory-artifacts`), providing an immutable audit trail of requirements-to-commit progression.
+
+### 2. Supply-Chain Sovereignty & Independent Maintenance
+- **Resilience Against Upstream Methodology Drift:** Maintained under `@lgcorzo` to insulate Dark Gravity's contract engine from breaking changes in external agent frameworks.
+- **Zero-Trust Cross-Platform Compliance:** Tested and hardened across Linux bash and Windows PowerShell environments with strict deterministic CI validation.
+
+---
+
 ## At a glance
 
 | If you want... | The bridge gives you... |
