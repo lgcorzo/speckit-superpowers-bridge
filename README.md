@@ -151,7 +151,7 @@ How the bridge differs from doing nothing, doing only one side, or using a peer 
 | **cc-spex (rhuss/cc-spex, formerly cc-sdd)** | Spec Kit (stays close to upstream, regular sync) | Spec Kit's explicit planning + selected Superpowers phases (guided brainstorming, intermediate spec/plan reviews, multi-subagent deep review) shipped as vanilla spec-kit extensions | Claude Code-focused | medium — opt-in extensions layered on spec-kit's flow |
 | **speckit-superpowers-bridge** (this) | Spec Kit (vendor-owned) | Superpowers (vendor-owned) | yes (Codex + Claude Code, identical contract) | **extremely thin** — 1 guard script, 1 handoff JSON, 0 new state machinery |
 
-The bridge's brand is **compatible with upstream growth + extremely lightweight**. Every release is graded against the constitution's [Principle VI Native-First gate](.specify/memory/constitution.md): does upstream already do this? Is upstream the right place to fix this? If either answer is "yes", the bridge does NOT add the feature.
+The bridge's brand is **compatible with upstream growth + extremely lightweight**. Every release is graded against the constitution's Principle VI Native-First gate (`.specify/memory/constitution.md` in a bootstrapped Spec Kit project): does upstream already do this? Is upstream the right place to fix this? If either answer is "yes", the bridge does NOT add the feature.
 
 ---
 
@@ -378,7 +378,7 @@ See `AGENTS.md` for the master cross-agent protocol; `CLAUDE.md` for Claude-spec
 | handoff JSON from an older install has v3 fields | Pre-0.3.0 handoff with `autonomous_mode` / `resume_context` / `archive_history` | No action needed. The 0.3.0+ bridge reads these tolerantly and silently drops them on the next write. |
 
 > [!WARNING]
-> **WSL users: do NOT set `git config --global http.proxy`.** Use the per-call env-var pattern from `AGENTS.md` (`https_proxy=http://10.77.0.11:10808 git push ...`). A global proxy config bakes the address into git config and breaks on every machine where that proxy is unreachable. The bridge's release runbook and smoke suite assume the env-var-per-call pattern.
+> **WSL users: do NOT set `git config --global http.proxy`.** Use the per-call env-var pattern from `AGENTS.md` (`https_proxy=http://<PROXY_HOST>:<PORT> git push ...`). A global proxy config bakes the address into git config and breaks on every machine where that proxy is unreachable. The bridge's release runbook and smoke suite assume the env-var-per-call pattern.
 
 </details>
 
@@ -392,7 +392,7 @@ This release (v1.3.0) is verified against:
 - **Codex CLI** `0.147.0`
 - **Claude Code** `2.1.233`
 
-Verified metadata is captured in [`.specify/extensions/speckit-superpowers-bridge/verified-versions.json`](.specify/extensions/speckit-superpowers-bridge/verified-versions.json) — a project-owned additive schema refreshed when a bridge release or upstream compatibility baseline changes. v1.3.0 records bridge, upstream tool, platform, and real-agent rows; missing or blocked rows are not advertised as verified.
+Verified metadata is captured in [`.specify/extensions/speckit-superpowers-bridge/extension.yml`](.specify/extensions/speckit-superpowers-bridge/extension.yml) (and `.specify/extensions/speckit-superpowers-bridge/verified-versions.json` when generated during release verification) — a project-owned additive schema refreshed when a bridge release or upstream compatibility baseline changes. v1.3.0 records bridge, upstream tool, platform, and real-agent rows; missing or blocked rows are not advertised as verified.
 
 When upstream tools ship a new release that breaks the bridge, we either patch the bridge scripts or pin the documented compatible versions in `CHANGELOG.md`.
 
@@ -428,5 +428,5 @@ Issues and discussion: <https://github.com/lihan3238/speckit-superpowers-bridge/
 
 ### Fork Maintenance & Agent Transparency
 
-- **Changes vs. Upstream:** Security dependency updates, CI/CD workflow fixes, and CodeQL remediation are tracked in the [commit history](../../commits) and [Pull Requests](../../pulls?q=is%3Apr).
+- **Changes vs. Upstream:** Security dependency updates, CI/CD workflow fixes, and CodeQL remediation are tracked in the [commit history](https://github.com/lgcorzo/speckit-superpowers-bridge/commits) and [Pull Requests](https://github.com/lgcorzo/speckit-superpowers-bridge/pulls?q=is%3Apr).
 - **Agent Tagging (`[agent]`):** Commits and pull requests generated automatically by agents in the Dark Gravity pipeline are prefixed with `[agent]` to distinguish automated maintenance from manual work.
