@@ -1,3 +1,5 @@
+Maintained fork of [lihan3238/speckit-superpowers-bridge](https://github.com/lihan3238/speckit-superpowers-bridge). It applies security patches and maintenance fixes on top of upstream. Part of the [Dark Gravity](https://github.com/lgcorzo/rust_CACD_autonomous_factory) factory. License: MIT.
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/lihan3238/speckit-superpowers-bridge/main/assets/social/github-social-preview.png" alt="speckit-superpowers-bridge: Spec Kit writes WHAT. Superpowers enforces HOW." width="960" />
 </p>
