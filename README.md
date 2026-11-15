@@ -1,3 +1,5 @@
+Maintained fork of [lihan3238/speckit-superpowers-bridge](https://github.com/lihan3238/speckit-superpowers-bridge). It applies security patches and maintenance fixes on top of upstream. Part of the [Dark Gravity](https://github.com/lgcorzo/rust_CACD_autonomous_factory) factory. License: MIT.
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/lihan3238/speckit-superpowers-bridge/main/assets/social/github-social-preview.png" alt="speckit-superpowers-bridge: Spec Kit writes WHAT. Superpowers enforces HOW." width="960" />
 </p>
@@ -395,8 +397,6 @@ Verified metadata is captured in [`.specify/extensions/speckit-superpowers-bridg
 When upstream tools ship a new release that breaks the bridge, we either patch the bridge scripts or pin the documented compatible versions in `CHANGELOG.md`.
 
 Spec Kit `0.9.x` moved coding-agent context updates into the bundled `agent-context` extension. The bridge runtime does not depend on that extension, so `requires.speckit_version` stays at `>=0.8.10`; this repository tracks the current 1.0.12 `agent-context` and `git` sources only to keep its own Spec Kit project bootstrap current.
-
-Maintained fork of [lihan3238/speckit-superpowers-bridge](https://github.com/lihan3238/speckit-superpowers-bridge). It applies security patches and maintenance fixes on top of upstream. Part of the [Dark Gravity](https://github.com/lgcorzo/rust_CACD_autonomous_factory) factory. License: MIT.
 
 > [!NOTE]
 > **From v0.6.0 onward**, the marketplace `download_url` is decoupled from the version. It permanently points at `https://github.com/lihan3238/speckit-superpowers-bridge/releases/latest/download/speckit-superpowers-bridge.zip` and resolves via GitHub's `/releases/latest/` alias. Future bridge releases never edit `download_url`; only `version` is bumped in `marketplace/catalog-entry.json`. This removes a recurring per-release edit class and a drift surface — one of the smallest possible Principle-VI wins.
