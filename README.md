@@ -33,13 +33,13 @@ No daemon. No service. No database. No second workflow engine. No custom discipl
 This bridge provides the **Spec-Driven Development (SDD) Contract Enforcement Layer** for the **[Dark Gravity Autonomous CA/CD Software Factory](https://github.com/lgcorzo/rust_CACD_autonomous_factory)** ([Architecture Knowledge Base](https://notebook.google.com/notebook/116d5f03-2fb0-4fa7-bd7c-1c9849920abc)).
 
 ### 1. Architectural Role in Dark Gravity
-- **Contract-First Task Ingestion (Vertex 2):** Connects Spec-Kit's formal specifications (`spec.md`, `plan.md`, `tasks.md`) with the autonomous execution agents (`ZeroClaw` / `Rustant`), guaranteeing that agents cannot invent unvetted requirements or drift from business contracts.
+- **Contract-First Task Ingestion (Vertex 2):** Connects Spec-Kit's formal specifications (`spec.md`, `plan.md`, `tasks.md`) with the autonomous execution agents (`ZeroClaw` / `Rustant`), enforcing boundary checks so agents stay aligned with specified requirements and contracts.
 - **TDD & Sandboxed Handoff:** Guides execution inside ephemeral gVisor sandboxes through rigorous Test-Driven Development, preventing "vibe coding" hallucinations and ensuring zero regressions.
-- **Traceability for EU AI Act & SPRI/Hazitek:** Every handoff checkpoint is persisted to the sovereign S3 storage tier (`factory-artifacts`), providing an immutable audit trail of requirements-to-commit progression.
+- **Auditability & Traceability:** Every handoff checkpoint is persisted to the self-hosted S3 storage tier (`factory-artifacts`), providing an auditable trail from specification to commit.
 
 ### 2. Supply-Chain Sovereignty & Independent Maintenance
 - **Resilience Against Upstream Methodology Drift:** Maintained under `@lgcorzo` to insulate Dark Gravity's contract engine from breaking changes in external agent frameworks.
-- **Zero-Trust Cross-Platform Compliance:** Tested and hardened across Linux bash and Windows PowerShell environments with strict deterministic CI validation.
+- **Cross-Platform CI Verification:** Tested and hardened across Linux bash and Windows PowerShell environments with strict deterministic CI validation.
 
 ---
 
@@ -423,3 +423,10 @@ MIT — see [`LICENSE`](LICENSE).
 This extension was developed using AI coding assistants (Claude Code for design + planning; Codex for implementation passes; Claude Code for the v0.3.0 trim and the v0.6.0 polish) per the AI-disclosure requirement in [Spec Kit CONTRIBUTING.md](https://github.com/github/spec-kit/blob/main/CONTRIBUTING.md). Every artifact passes human review before commit. Smoke tests under [`tests/`](tests/) (bash flavor as of 009) exercise the handoff schema, the 5 hardcoded guard rules, the bridge-state output, the before/after-implement hook dispatch, and cross-agent skill parity.
 
 Issues and discussion: <https://github.com/lihan3238/speckit-superpowers-bridge/issues>
+
+---
+
+### Fork Maintenance & Agent Transparency
+
+- **Changes vs. Upstream:** Security dependency updates, CI/CD workflow fixes, and CodeQL remediation are tracked in the [commit history](../../commits) and [Pull Requests](../../pulls?q=is%3Apr).
+- **Agent Tagging (`[agent]`):** Commits and pull requests generated automatically by agents in the Dark Gravity pipeline are prefixed with `[agent]` to distinguish automated maintenance from manual work.
